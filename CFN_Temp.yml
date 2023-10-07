@@ -1,0 +1,108 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Static Website Hosting with CloudFront and Route 53
+
+Parameters:
+  BucketName:
+    Description: S3 Bucket Name for Hosting
+    Type: String
+    AllowedPattern: ^[a-zA-Z0-9.-]+$
+    ConstraintDescription: Bucket name must be alphanumeric and can contain periods and hyphens.
+  
+  DistributionAlias:
+    Description: Alias for your custom domain name
+    Type: String
+    Default: "www.vvcloud.co.in"
+  
+  ACMDomainName:
+    Description: Alias for your custom domain name
+    Type: String
+    Default: "*.vvcloud.co.in"
+  
+  Route53DomainName: 
+    Description: Alias for your custom domain name
+    Type: String
+    Default: "vvcloud.co.in."
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  
+  S3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: GrantReadAccessToCloudFront
+            Effect: Allow
+            Principal:
+              CanonicalUser: !GetAtt OAI.S3CanonicalUserId
+            Action: s3:GetObject
+            Resource: !Sub arn:aws:s3:::${BucketName}/*
+  
+  OAI:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'Portfolio OAI'
+
+  ACMCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Ref ACMDomainName
+      ValidationMethod: EMAIL
+
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - Id: S3Origin
+            DomainName: !GetAtt S3Bucket.DomainName
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${OAI}
+        Enabled: 'true'
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          TargetOriginId: S3Origin
+          ForwardedValues:
+            QueryString: 'false'
+          ViewerProtocolPolicy: redirect-to-https
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: 'true'
+        Aliases: 
+          - !Ref DistributionAlias
+        ViewerCertificate:
+          AcmCertificateArn: !Ref ACMCertificate
+          SslSupportMethod: sni-only
+  
+  Route53HostedZone:
+    Type: AWS::Route53::HostedZone
+    Properties:
+      Name: !Ref Route53DomainName
+
+  Route53RecordSet:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref Route53HostedZone
+      Name: !Ref DistributionAlias
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt Distribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
+Outputs:
+  CloudFrontDomainName:
+    Description: CloudFront Domain Name
+    Value: !GetAtt Distribution.DomainName
+    Export:
+      Name: !Sub "${AWS::StackName}-CloudFrontDomainName"
+
