@@ -1,0 +1,40 @@
+section {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section:nth-child(even) {
+    background: #f4f4f4;
+}
+
+/* Home section */
+#home {
+    text-align: center;
+}
+
+/* Publications section */
+.publication {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 3px solid #333;
+}
+
+/* Talks section */
+.talk {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Code section */
+.code-project {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+}

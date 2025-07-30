@@ -1,0 +1,38 @@
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul li {
+    margin: 0 1rem;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    background: #fff;
+    color: #333;
+    border-radius: 3px;
+}
+
+#navbar ul li a.active {
+    background: #fff;
+    color: #333;
+    border-radius: 3px;
+}
