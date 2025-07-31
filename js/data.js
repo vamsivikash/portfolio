@@ -162,6 +162,13 @@ const portfolioData = {
             date: "2025-08-05",
             url: "",
             authors: [""]
+        },
+        {
+            title: "Learn techniques to reduce your Serverless usage while not compromising on performance",
+            journal: "Serverless Cost & Performance Optimization",
+            date: "2023-05-05",
+            url: "https://serverlessland.com/content/service/lambda/guides/cost-optimization/5-filter-and-batch",
+            authors: [""]
         }
     ],
     
