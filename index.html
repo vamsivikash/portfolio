@@ -3,78 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <meta name="description" content="Vamsi Vikash - Senior Solutions Architect and Serverless Specialist at AWS. Talks, publications, and professional experience.">
+    <meta name="keywords" content="AWS, Serverless, Solutions Architect, Cloud Computing, Vamsi Vikash">
+    <meta name="author" content="Vamsi Vikash">
+    
+    <title>Vamsi Vikash - Senior Solutions Architect | AWS Serverless Specialist</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vamsivikash.dev/">
+    <meta property="og:title" content="Vamsi Vikash - Senior Solutions Architect">
+    <meta property="og:description" content="Senior Solutions Architect and Serverless Specialist at AWS">
+    <meta property="og:image" content="assets/images/ProfilePic.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vamsivikash.dev/">
+    <meta property="twitter:title" content="Vamsi Vikash - Senior Solutions Architect">
+    <meta property="twitter:description" content="Senior Solutions Architect and Serverless Specialist at AWS">
+    <meta property="twitter:image" content="assets/images/ProfilePic.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
     <div id="top" class="container-xxl">
-        <!-- Header Section -->
-        <div class="row">
-            <h1>Your Name</h1>
+        <!-- Header Section 
+        <header class="row mb-4">
+            <div class="col-12">
+                <h1>Vamsi Vikash</h1>
+                <p class="lead text-center">Senior Solutions Architect, Serverless Specialist at AWS</p>
+            </div>
+        </header>
+        -->
+        <!-- Search and Filter Controls - Commented out for now -->
+        <!--
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search talks, publications, projects..." aria-label="Search content">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="talks">Talks</button>
+                <button class="filter-btn" data-filter="publications">Publications</button>
+                <button class="filter-btn" data-filter="reviewer">Advisory</button>
+            </div>
+        </div>
+        -->
+
+        <main id="main-content">
             <!-- Profile Section -->
-            <div class="col-12 col-lg-6">
-                <img class="img-fluid profile-photo" src="assets/images/profile-photo.jpg" alt="Your Name"/>
-                <br />
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a class="btn" href="https://www.linkedin.com/in/yourprofile" target="_blank">
-                        <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
-                    </a>
+            <section class="row mb-2">
+                <!-- Left Column - Complete Profile -->
+                <div class="col-12">
+                    <div class="profile-section">
+                        <!-- Top Row: Image, Social Links, and Certifications -->
+                        <div class="profile-top-row">
+                            <!-- Profile Photo -->
+                            <img class="profile-photo-rect" src="assets/images/ProfilePic.jpeg" alt="Vamsi Vikash Ankam - Professional headshot"/>
+                            
+                            <!-- Name and Social Links -->
+                            <div class="name-social-section">
+                                <h1 class="profile-name">Vamsi Vikash</h1>
+                                
+                                <!-- Social Links - Vertical -->
+                                <div class="social-links-vertical">
+                                    <a class="btn social-btn" href="https://www.linkedin.com/in/vamsivikash" target="_blank" aria-label="LinkedIn Profile">
+                                        <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+                                    </a>
+                                    <a class="btn social-btn" href="https://github.com/vamsivikash" target="_blank" aria-label="GitHub Profile">
+                                        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+                                    </a>
+                                    <a class="btn social-btn" href="https://twitter.com/vamsi_vikash" target="_blank" aria-label="Twitter Profile">
+                                        <img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter">
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Certifications next to social links -->
+                            <div id="badges" class="badges-inline">
+                                <!-- Certifications will be dynamically loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Box - Simplified -->
+                        <div class="experience-box">
+                            <div class="experience-item">2016-2025: Senior Solutions Architect, Amazon Web Services</div>
+                            <div class="experience-item">2015-2016: Graduate School Programmer, NC State University</div>
+                            <div class="experience-item">2012-2014: Web Developer, Tata Consultancy Services</div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Experience -->
-                <ul class="experience-list">
-                    <li>Current Position</li>
-                    <li>Previous Position</li>
-                    <!-- Add more experience items -->
-                </ul>
-            </div>
-            <!-- Badges/Certifications -->
-            <div id="badges" class="col-12 col-lg-6">
-                <!-- Add your certification badges here -->
-            </div>
-        </div>
+            </section>
 
-        <!-- Content Sections -->
-        <div class="row">
-            <!-- Talks Section -->
-            <div class="col-12 col-lg-6">
-                <h2 id="talks">Talks (<a href="#top">↑</a>)</h2>
-                <ul class="talks-list">
-                    <!-- Add your talks here -->
-                </ul>
-            </div>
-            <!-- Publications Section -->
-            <div class="col-12 col-lg-6">
-                <h2 id="publications">Publications (<a href="#top">↑</a>)</h2>
-                <ul class="publications-list">
-                    <!-- Add your publications here -->
-                </ul>
-            </div>
-        </div>
+            <!-- Content Sections -->
+            <section class="row">
+                <!-- Talks Section -->
+                <div class="col-12 col-lg-6 mb-3">
+                    <h2 id="talks">
+                        <i class="fas fa-microphone me-2"></i>
+                        Talks 
+                        <a href="#top" class="text-decoration-none" aria-label="Back to top">↑</a>
+                    </h2>
+                    <ul class="talks-list">
+                        <!-- Talks will be dynamically loaded here -->
+                        <li class="loading-placeholder">
+                            <div class="loading"></div> Loading talks...
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Publications Section -->
+                <div class="col-12 col-lg-6 mb-3">
+                    <h2 id="publications">
+                        <i class="fas fa-book me-2"></i>
+                        Publications 
+                        <a href="#top" class="text-decoration-none" aria-label="Back to top">↑</a>
+                    </h2>
+                    <ul class="publications-list">
+                        <!-- Publications will be dynamically loaded here -->
+                        <li class="loading-placeholder">
+                            <div class="loading"></div> Loading publications...
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- Additional Sections -->
-        <div class="row">
-            <!-- Code Section -->
-            <div class="col-12 col-lg-6">
-                <h2 id="code">Code (<a href="#top">↑</a>)</h2>
-                <ul class="code-list">
-                    <!-- Add your code projects here -->
-                </ul>
+            <!-- Advisory Section -->
+            <section class="row">
+                <div class="col-12 mb-3">
+                    <h2 id="reviewer">
+                        <i class="fas fa-user-tie me-2"></i>
+                        Advisory & Review Work 
+                        <a href="#top" class="text-decoration-none" aria-label="Back to top">↑</a>
+                    </h2>
+                    <ul class="reviewer-list">
+                        <!-- Reviewer work will be dynamically loaded here -->
+                        <li class="loading-placeholder">
+                            <div class="loading"></div> Loading advisory work...
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 Vamsi Vikash. All rights reserved.</p>
+                    <p id="last-updated" class="small text-muted"></p>
+                    <p class="small">
+                        <a href="mailto:contact@vamsivikash.dev">contact@vamsivikash.dev</a> | 
+                        <a href="https://www.linkedin.com/in/vamsivikash">LinkedIn</a> | 
+                        <a href="https://github.com/vamsivikash">GitHub</a>
+                    </p>
+                </div>
             </div>
-            <!-- Reviewer/Advisor Section -->
-            <div class="col-12 col-lg-6">
-                <h2 id="reviewer">Reviewer/Advisor (<a href="#top">↑</a>)</h2>
-                <ul class="reviewer-list">
-                    <!-- Add your reviewer/advisor work here -->
-                </ul>
-            </div>
-        </div>
+        </footer>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Data -->
+    <script src="js/data.js"></script>
+    
+    <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vamsi Vikash",
+        "jobTitle": "Senior Solutions Architect, Serverless Specialist",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Amazon Web Services"
+        },
+        "url": "https://vamsivikash.dev",
+        "sameAs": [
+            "https://www.linkedin.com/in/vamsivikash",
+            "https://github.com/vamsivikash",
+            "https://twitter.com/vamsivikash"
+        ],
+        "image": "assets/images/ProfilePic.jpeg",
+        "description": "Senior Solutions Architect and Serverless Specialist at AWS with expertise in cloud computing and serverless technologies."
+    }
+    </script>
 </body>
 </html>
