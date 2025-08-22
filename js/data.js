@@ -169,6 +169,13 @@ const portfolioData = {
             date: "2023-05-05",
             url: "https://serverlessland.com/content/service/lambda/guides/cost-optimization/5-filter-and-batch",
             authors: [""]
+        },
+        {
+            title: "Modulate - Building a cost-effective, AI-Driven voice intelligence solution on AWS",
+            journal: "AI Driven Voice Intelligence Solution",
+            date: "2025-08-22",
+            url: "https://aws.amazon.com/solutions/case-studies/modulate-case-study/",
+            authors: [""]
         }
     ],
     
