@@ -157,13 +157,6 @@ const portfolioData = {
             authors: [""]
         },
         {
-            title: "Learn how Modulate was able to use GenAI with Serverless for identifying Toxicity",
-            journal: "Modulate Customer Story",
-            date: "2025-08-05",
-            url: "",
-            authors: [""]
-        },
-        {
             title: "Learn techniques to reduce your Serverless usage while not compromising on performance",
             journal: "Serverless Cost & Performance Optimization",
             date: "2023-05-05",
@@ -171,10 +164,10 @@ const portfolioData = {
             authors: [""]
         },
         {
-            title: "Modulate - Building a cost-effective, AI-Driven voice intelligence solution on AWS",
-            journal: "AI Driven Voice Intelligence Solution",
+            title: "Building a cost-effective, AI-Driven voice intelligence solution on AWS",
+            journal: "Modulate Customer Case Study",
             date: "2025-08-22",
-            url: "https://aws.amazon.com/solutions/case-studies/modulate-case-study/",
+            url: "https://aws.amazon.com/solutions/case-studies/modulate-case-study",
             authors: [""]
         }
     ],
