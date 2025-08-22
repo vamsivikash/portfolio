@@ -179,7 +179,7 @@ const portfolioData = {
             organization: "AWS Compute Blog",
             date: "March 2025",
             description: "Efficient large-scale serverless data processing for slow downstream systems",
-            url: "https://aws.amazon.com/blogs/compute/efficient-large-scale-serverless-data-processing-for-slow-downstream-systems/"
+            url: "https://aws.amazon.com/blogs/publicsector/efficient-large-scale-serverless-data-processing-for-slow-downstream-systems/"
         },
     ],
     
